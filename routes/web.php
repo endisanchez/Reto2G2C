@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\PageController@inicio');
+Route::get('/', 'App\Http\Controllers\ProductosController@inicio');
+
+Route::get('admin', 'App\Http\Controllers\adminController@admin');
+
 
 /*Route::get('inicio', function () {
     return view('index');

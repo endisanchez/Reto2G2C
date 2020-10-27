@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="eu">
 <head>
@@ -7,22 +5,20 @@
 
 <meta charset="utf-8"/>
 
-<title>VIKINGOS</title>
+<title>EuskoDenda</title>
 </head>
 
 
 <body id="body">
-
-
     <nav id="menu">
-		<ul>
-			<li><a href="index.php">HOME</a></li>
-			<li><a href="productos.php">PRODUCTOS</a></li>
-			<li><a href="contacto.php">CONTACTO</a></li></li>
-			<li><a href="admin.php">ADMIN</a></li>
-        </ul>
-	 </nav>
-	 
+          <ul>
+              <li><a href="index.php">HOME</a></li>
+              <li><a href="productos.php">PRODUCTOS</a></li>
+              <li><a href="contacto.php">CONTACTO</a></li></li>
+              <li><a href="admin.blade.php">ADMIN</a></li>
+          </ul>
+     </nav>
+
 <div id="logoprincipal">
   <img src="./Imagenes/logo.png" alt="logo" />
 </div>
@@ -30,16 +26,17 @@
 <article>
 
 
-	@foreach($productos as $item)
+	@foreach($admins as $item)
 		<table id="taula">
   			<tr>
     			<td>{{$item->imagen}}</td>
-    			<td>{{$item->nombre}} <br><br> {{$item->descripcion}}</td>
-    			<td><form action="prod_edit_ikusi.php" method="post">
+				<td>{{$item->nombre}} <br><br> {{$item->descripcion}}</td>
+    			<td>{{$item->stock}}</td>
+    			<td><form action="gestion" method="post">
 						<input type="submit" value="Editar"/>
 					</form>
 				</td>
-				<td><form action="produktu_kendu.php" method="post">
+				<td><form action="quitar" method="post">
 						<input type="submit" value="Borrar"/>
 					</form>
 				</td>
@@ -53,7 +50,7 @@
 <tr>
 <td><div id="register">
 
-		<h1>Produktu berri bat sartu</h1>
+		<h1>Introduze un nuevo producto</h1>
 			<form action= "meter-datos.php" method="POST">
 				<label>Nombre: </label>
 					<input type="text" name="nombre"/><br><br>

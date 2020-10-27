@@ -15,7 +15,7 @@
               <li><a href="index.php">HOME</a></li>
               <li><a href="productos.php">PRODUCTOS</a></li>
               <li><a href="contacto.php">CONTACTO</a></li></li>
-              <li><a href="admin.php">ADMIN</a></li>
+              <li><a href="admin">ADMIN</a></li>
           </ul>
      </nav>
 
@@ -29,9 +29,8 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descipcion</th>
     </tr>
   </thead>
   <tbody>
@@ -40,7 +39,6 @@
       <th scope="row">{{$item->id}}</th>
       <td>{{$item->nombre}}</td>
       <td>{{$item->descripcion}}</td>
-      <td>@mdo</td>
     </tr>
   @endforeach()
   </tbody>
