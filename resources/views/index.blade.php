@@ -9,7 +9,7 @@
 </head>
 
 
-<body id="body">
+<body id="body" style="background-image: url('./Imagenes/fondoAlter.png');">
   <nav id="menu">
     <ul>
         <li><a href="index">HOME</a></li>

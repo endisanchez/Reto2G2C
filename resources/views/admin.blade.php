@@ -9,7 +9,7 @@
 </head>
 
 
-<body id="body">
+<body id="body" style="background-image: url('./Imagenes/fondoAlter.png');">
     <nav id="menu">
           <ul>
               <li><a href="index">HOME</a></li>
@@ -32,9 +32,9 @@
     			<td>{{$item->imagen}}</td>
 				<td>
 
-					{{$item->nombre}} 
-					<br><br> 
-					
+					{{$item->nombre}}
+					<br><br>
+
 					{{$item->descripcion}}
 				</td>
 				<td>

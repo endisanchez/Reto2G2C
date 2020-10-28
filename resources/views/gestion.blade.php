@@ -9,7 +9,7 @@
 </head>
 
 
-<body id="body">
+<body id="body" style="background-image: url('../Imagenes/fondoAlter.png');">
     <nav id="menu">
           <ul>
               <li><a href="../index">HOME</a></li>
@@ -28,7 +28,7 @@
 <table id="taula">
     <tr>
     <td><div id="register">
-    
+
             <h1>Editar producto</h1>
                     <label>Id: </label>
                         <input type="text"  value="{{$prod->id}}"  readonly="readonly"/><br><br>
