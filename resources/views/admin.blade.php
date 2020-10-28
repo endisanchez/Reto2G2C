@@ -12,10 +12,10 @@
 <body id="body">
     <nav id="menu">
           <ul>
-              <li><a href="index.php">HOME</a></li>
+              <li><a href="index">HOME</a></li>
               <li><a href="productos.php">PRODUCTOS</a></li>
               <li><a href="contacto.php">CONTACTO</a></li></li>
-              <li><a href="admin.blade.php">ADMIN</a></li>
+              <li><a href="admin">ADMIN</a></li>
           </ul>
      </nav>
 
@@ -30,11 +30,19 @@
 		<table id="taula">
   			<tr>
     			<td>{{$item->imagen}}</td>
-				<td>{{$item->nombre}} <br><br> {{$item->descripcion}}</td>
-    			<td>{{$item->stock}}</td>
-    			<td><form action="gestion" method="post">
-						<input type="submit" value="Editar"/>
-					</form>
+				<td>
+
+					{{$item->nombre}} 
+					<br><br> 
+					
+					{{$item->descripcion}}
+				</td>
+				<td>
+					<button>
+						<a href="{{ route('gestion', $item)}}">
+							Editar
+						</a>
+					</button>
 				</td>
 				<td><form action="quitar" method="post">
 						<input type="submit" value="Borrar"/>

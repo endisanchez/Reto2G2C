@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\ProductosController@inicio');
+Route::get('/admin/{id}', 'App\Http\Controllers\prodeditController@edit')->name('gestion');
+
+Route::get('/index', 'App\Http\Controllers\ProductosController@inicio');
 
 Route::get('admin', 'App\Http\Controllers\adminController@admin');
+
 
 
 /*Route::get('inicio', function () {
