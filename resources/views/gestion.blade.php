@@ -13,8 +13,8 @@
     <nav id="menu">
           <ul>
               <li><a href="../index">HOME</a></li>
-              <li><a href="productos.php">PRODUCTOS</a></li>
-              <li><a href="contacto.php">CONTACTO</a></li></li>
+              <li><a href="../productos">PRODUCTOS</a></li>
+              <li><a href="../contacto">CONTACTO</a></li></li>
               <li><a href="../admin">ADMIN</a></li>
           </ul>
      </nav>

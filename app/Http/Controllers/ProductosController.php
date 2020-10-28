@@ -9,6 +9,6 @@ class ProductosController extends Controller
     public function inicio()
     {
         $productos = App\Models\Productos::all();
-        return view('index', compact('productos'));
+        return view('productos', compact('productos'));
     }
 }
