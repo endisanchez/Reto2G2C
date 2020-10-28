@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/{id}', 'App\Http\Controllers\prodeditController@edit');
+
+
 Route::get('admin', 'App\Http\Controllers\adminController@admin');
 
 Route::get('productos', 'App\Http\Controllers\ProductosController@inicio');
-
 
 Route::get('/', function () {
     return view('index');
