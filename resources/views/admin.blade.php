@@ -44,7 +44,9 @@
 						</a>
 					</button>
 				</td>
-				<td><form action="quitar" method="post">
+				<td><form action="{{ route('eliminarProd', $item) }}" method="POST">
+					@method('DELETE')
+    				@csrf
 						<input type="submit" value="Borrar"/>
 					</form>
 				</td>
@@ -58,8 +60,9 @@
 <tr>
 <td><div id="register">
 
-		<h1>Introduze un nuevo producto</h1>
-			<form action= "meter-datos.php" method="POST">
+		<h1>Introduce un nuevo producto</h1>
+			<form method="POST" action="{{ route('crearprod') }}">
+				@csrf
 				<label>Nombre: </label>
 					<input type="text" name="nombre"/><br><br>
 				<label>Descripcion: </label>
