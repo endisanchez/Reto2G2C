@@ -6,6 +6,8 @@
 <meta charset="utf-8"/>
 
 <title>EuskoDenda</title>
+
+
 </head>
 
 
@@ -20,32 +22,62 @@
 </nav>
 
 <div id="logoprincipal">
-  <img src="./Imagenes/logo.png" alt="logo" />
+  <img id="logo" src="./Imagenes/logo.png" alt="logo" />
 </div>
 
 <article>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Descipcion</th>
-    </tr>
-  </thead>
-  <tbody>
+  <table id="taula">
+      <tr>
+        <td>
+          <h2><u>EuskoDenda</u></h2>
+          <p>Bienvenido a EuskoDenda! En nuestra página podrás encontrar distintos productos de los supermercados de nuestra zona.</p>
 
-  </tbody>
-</table>
+
+          <p>Información:</p>
+    <button type="button" class="collapsible">Informacion</button>
+    <div class="content">
+  <p >Nuestra página ofrece productos de distintos supermercados en los que destacan productos de la zona. </p>
+</div>
+
+<p>Horarios:</p>
+    <button type="button" class="collapsible">Horarios</button>
+    <div class="content">
+  <p >Lunes-Sabado: 08:00-14:00 / 16:00-20:30
+      <br>
+      Domingos: 09:00-14:40
+  </p>
+</div>
+
+        </td>
+      </tr>
+  </table>
 
 </article>
 
 <footer>
-  <a href="http://www.facebook.com"><img src="./Imagenes/logofacebook.png" alt="logo" width="45px" height="45px" /><label style="color:white">Facebook</label><a>
-  <a href="http://www.instagram.com"><img src="./Imagenes/logoinstagram.png" alt="logo" width="45px" height="45px" /><label style="color:white">Instagram</label><a>
-  <a href="http://www.twitter.com"><img src="./Imagenes/logotwitter.png" alt="logo" width="45px" height="45px" /><label style="color:white">Twitter</label><a>
+  <a href="http://www.facebook.com/%22%3E"><img src="./Imagenes/logofacebook.png" alt="logo" width="45px" height="45px" /><label style="color:white">Facebook</label><a>
+  <a href="http://www.instagram.com/%22%3E"><img src="./Imagenes/logoinstagram.png" alt="logo" width="45px" height="45px" /><label style="color:white">Instagram</label><a>
+  <a href="http://www.twitter.com/%22%3E"><img src="./Imagenes/logotwitter.png" alt="logo" width="45px" height="45px" /><label style="color:white">Twitter</label><a>
 </footer>
 
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
 </body>
 
 </html>
