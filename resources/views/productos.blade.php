@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../resources/css/estilos.css"/>
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta charset="utf-8"/>
 
 <title>EuskoDenda</title>
@@ -18,18 +19,23 @@
           </ul>
      </nav>
 
-
 <div id="logoprincipal">
   <img src="{{ asset('Imagenes/logo.png') }}" alt="logo" />
 </div>
 
 <article>
+  <form method="post" action ="{{ route('prodTiendas') }}" name="formulario">
+    @csrf
 
-  <select>
-    @foreach($tiendas as $tienda)
-      <option value="{{$tienda->nombre}}">{{$tienda->nombre}}</option>
-    @endforeach()
-  </select>
+    <select name="seleccionarTienda">
+      @foreach($tiendas as $tienda)
+        <option value="{{$tienda->id}}">{{$tienda->nombre}}</option>
+      @endforeach()
+    </select>
+
+    <input type='submit' value="Seleccionar" name="botonForm">
+
+  </form>
 
   <table id ="taula">
     <tr>
@@ -38,14 +44,25 @@
       <th>Imágen</th>
       <th>Enlace</th>
     </tr>
-  @foreach($productos as $item)
-    <tr>
-      <td>{{$item->nombre}}</td>
-      <td>{{$item->descripcion}}</td>
-      <td><img src="./Imagenes/{{$item->imagen}}" width="200px"/></td>
-      <td><a href="{{$item->enlaces_videos}}">{{$item->descripcion}}</a></td>
-    </tr>
-  @endforeach()
+  @if(!isset($productosTienda))
+    @foreach($productos as $item)
+      <tr>
+        <td>{{$item->nombre}}</td>
+        <td>{{$item->descripcion}}</td>
+        <td><img src="./Imagenes/{{$item->imagen}}" width="200px"/></td>
+        <td><a href="{{$item->enlaces_videos}}">{{$item->descripcion}}</a></td>
+      </tr>
+    @endforeach()
+  @else
+    @foreach($prodTienda as $prod)
+      <tr>
+        <td>{{$prod->nombre}}</td>
+        <td>{{$prod->descripcion}}</td>
+        <td><img src="./Imagenes/{{$prod->imagen}}" width="200px"/></td>
+        <td><a href="{{$item->enlaces_videos}}">{{$prod->descripcion}}</a></td>
+      </tr>
+    @endforeach()
+  @endif()
 </table>
 
 </article>
