@@ -30,20 +30,22 @@
     <td><div id="register">
 
             <h1>Editar producto</h1>
+                <form method="POST" enctype="multipart/formdata" action="{{ route('update', $prod->id ) }}">
+                    @method('PUT')
+                    @csrf
                     <label>Id: </label>
                         <input type="text"  value="{{$prod->id}}"  readonly="readonly"/><br><br>
                     <label>Nombre: </label>
-                        <input type="text" value="{{$prod->nombre}}"/><br><br>
+                        <input type="text" name="nombre" value="{{$prod->nombre}}"/><br><br>
                     <label>Descripcion: </label>
-                        <input type="text" value="{{$prod->descripcion}}"/><br><br>
+                        <input type="text" name="descripcion" value="{{$prod->descripcion}}"/><br><br>
                     <label>Imagen: </label>
-                        <form name="subida-imagenes" type="POST" enctype="multipart/formdata" >
-                            <input type="file" name="imagen1" />
-                            <input type="submit" name="subir-imagen" value="Enviar imagen" />
-                        </form><br><br>
+                        <input type="file" name="newimage" />
+                        <br><br>
                     <label>Enlaces y videos: </label>
-                        <input type="text" value="{{$prod->enlaces_videos}}"/><br><br>
-                    <input type="submit" value="Añadir producto"/>
+                        <input type="text" name="enlaces_videos" value="{{$prod->enlaces_videos}}"/><br><br>
+                    <input type="submit" value="Guardar"/>
+                </form>
         </div>
     </td>
     </tr>
